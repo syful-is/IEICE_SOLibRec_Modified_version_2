@@ -1,0 +1,1785 @@
+%% v2.1 [2015/10/31]
+\documentclass[paper]{ieice}
+%\documentclass[invited]{ieice}
+%\documentclass[position]{ieice}
+%\documentclass[survey]{ieice}
+%\documentclass[invitedsurvey]{ieice}
+%\documentclass[review]{ieice}
+%\documentclass[tutorial]{ieice}
+%\documentclass[letter]{ieice}
+%\documentclass[brief]{ieice}
+%\usepackage[dvips]{graphicx}
+%\usepackage[pdftex]{graphicx,xcolor}% for pdflatex
+\usepackage[dvipdfmx]{graphicx,xcolor}% for platex or uplatex
+\usepackage[fleqn]{amsmath}
+\usepackage{newtxtext}
+\usepackage[varg]{newtxmath}
+
+%% <local definitions>
+\def\ClassFile{\texttt{ieice.cls}}
+\newcommand{\PS}{{\scshape Post\-Script}}
+\newcommand{\AmSLaTeX}{%
+ $\mathcal A$\lower.4ex\hbox{$\!\mathcal M\!$}$\mathcal S$-\LaTeX}
+\def\BibTeX{{\rmfamily B\kern-.05em%
+ \textsc{i\kern-.025em b}\kern-.08em%
+  T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\makeatletter
+\def\tmpcite#1{\@ifundefined{b@#1}{\textbf{?}}{\csname b@#1\endcsname}}%
+\makeatother
+
+\newlength{\Kanjiwidth}
+\settowidth{\Kanjiwidth}{}
+\parindent=\Kanjiwidth
+%% </local definitions>
+
+\field{A}
+\vol{98}
+\no{1}
+\SpecialSection{\LaTeXe\ Class File for IEICE Transactions}
+%\SpecialIssue{}
+\title{dqîñÊMwï\LaTeXe\ NXt@CÌg¢û}
+\titlenote{This paper was presented at ...}
+\authorlist{%
+ \authorentry{Hanako DENSHI}{m}{labelA}\MembershipNumber{1111111}
+ \authorentry{Taro DENSHI}{n}{labelB}[labelC]\MembershipNumber{}
+}
+%\breakauthorline{2}
+\affiliate[labelA]{The author is with the Faculty ...}
+%\affiliate[labelA]{The author is with the 
+%\EICdepartment{\texttt{[department]}}
+%\EICorganization{\texttt{[organization]}}
+%\EICaddress{\texttt{[address]}}
+%}
+\affiliate[labelB]{The author is with the Faculty ...}
+%\affiliate[labelB]{The author is with the 
+%\EICdepartment{\texttt{[department]}}
+%\EICorganization{\texttt{[organization]}}
+%\EICaddress{\texttt{[address]}}
+%}
+\paffiliate[labelC]{Presently, the author is with ...}
+\received{2015}{10}{8}
+\revised{2015}{10}{31}
+
+\begin{document}
+\maketitle
+
+\begin{summary}
+±ÌðàÍC\LaTeXe\ ðpµÄ IEICE Transactions Ée·éÛÉ
+p¢éNXt@Ci\ClassFile{}jÌg¢ûðà¾µ½àÌÅ·D
+\LaTeX\ ÌêÊIpÉÖ·éðàÍC
+¶Ì References ÈÇðQÆµÄ­¾³¢DÜ½C
+·MvÍCdqîñÊMwïÌp¶_¶ueÌµ¨èvðQÆµÄ­¾³¢D
+È¨C±Ìðà©gªe´eÌTvÆÈÁÄ¢Ü·D
+\end{summary}
+\begin{keywords}
+AXL[Å p\LaTeXe{}CNXt@CC^CsOÌÓC®ÌLq
+\end{keywords}
+
+\section{Í¶ßÉ}\label{intro}
+
+{ðàÍdqîñÊMwï \LaTeXe\ NXt@Ci\ClassFile{}jð
+gÁÄe_¶ðLq·éÛÌÓðÜÆß½àÌÅ·D
+Section~\ref{usage} ÅÍev[gÉ]Á½Lqû@ðC
+Section~\ref{generalnote} ÅÍNXt@CSÊÉÖ·éÓðC
+Section~\ref{typesetting} ÅÍ´eì¬ÌÛÌ^CsOÌ
+Óâ®ªÅÊðÍÝo·êÌû@ðC
+Section~\ref{source} ÅÍeÉño·éÒWpf[^Ì
+\[Xt@CñoÉ ½ÁÄÌÓð
+\ref{printandpdf} ÅÍA4pÖÌoÍÆPDFÌì¬û@ðC
+»ê¼êà¾µÜ·D
+
+´eì¬É ½ÁÄÍC±ÌNXt@CÆ
+¯Ézz³êé \texttt{template.tex} ªpÅ«Ü·D
+
+\section{ev[gÆLqû@}\label{usage}
+
+\ClassFile\ ÍCIvVÆµÄÅÍÈ­C
+hLgNXÆµÄwèµÄ­¾³¢D
+\texttt{twoside}C\texttt{twocolumn}C\texttt{fleqn} ª
+àÅé¾³êÄ¢Ü·©çC±êçÌIvVðwè·éKvÍ èÜ¹ñD
+CAEgâÌÙðÏX·éIvVÌgpâp[^ÌÏXÍ
+síÈ¢Å­¾³¢D
+
+\subsection{NXIvV}
+
+ep´eÍuPAPERvÆuLETTERvÉåÊ³êÜ·ªC
+\ClassFile\ ÍhLgNXÉIvVðwè·é±ÆÉæÁÄC
+±êçÌÌÙ¾¯ÅÈ­uINVITED PAPERvâuSURVEY PAPERvÈÇÌ
+ÌÙÉ·é±ÆàÅ«Ü·iTable~\ref{classoption} QÆjD
+
+\begin{table}[tb]
+\caption{hLgNXÌIvV}
+\label{classoption}
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{NXIvV} & \textbf{´eÌíÊ}\\
+\hline
+%\texttt{referee}       & ¸Çpêig\\
+%\hline
+\texttt{paper}         & \textsf{PAPER}\\
+\texttt{invited}       & \textsf{INVITED PAPER}\\
+\texttt{position}      & \textsf{POSITION PAPER}\\
+\texttt{survey}        & \textsf{SURVEY PAPER}\\
+\texttt{invitedsurvey} & \textsf{INVITED SURVEY PAPER}\\
+\texttt{review}        & \textsf{REVIEW PAPER}\\
+\texttt{tutorial}      & \textsf{TUTORIAL PAPER}\\
+\hline
+\texttt{letter}        & \textsf{LETTER}\\
+\texttt{brief}         & \textsf{BRIEF PAPER}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+±êçÌIvVðÈªµ½êÍC\texttt{paper} IvVð
+wèµ½êÆ¯¶Å·D
+
+%\texttt{referee} IvVðwè·éÆêigÉ·é±ÆàÅ«Ü·D
+%¸Çp´eÌñoÉpÅ«éIvVÅ·iK{ÅÍ èÜ¹ñjD
+%·¢fBXv[®ð½­ÜÞ´eÈÇÅ®ðÜèÔ·èÔªÈ¯Ü·D
+
+\texttt{letter} Ü½Í \texttt{brief}ip¶_¶CÌÝjðwèµ½Æ«ÍC
+\verb/\profile/ R}hi\pageref{profile:command} ÅQÆjÍ
+LqµÄàoÍ³êÜ¹ñD
+
+\subsection{ev[g}
+
+ev[gÉ]ÁÄà¾µÜ·D
+
+%\affiliate[labelA]{The author is with the 
+%\EICdepartment{\texttt{[department]}}
+%\EICorganization{\texttt{[organization]}}
+%\EICaddress{\texttt{[address]}}
+%}
+%\affiliate[labelB]{The author is with the 
+%\EICdepartment{\texttt{[department]}}
+%\EICorganization{\texttt{[organization]}}
+%\EICaddress{\texttt{[address]}}
+%}
+
+\begin{verbatim}
+\documentclass[paper]{ieice}
+%\documentclass[invited]{ieice}
+%\documentclass[position]{ieice}
+%\documentclass[survey]{ieice}
+%\documentclass[invitedsurvey]{ieice}
+%\documentclass[review]{ieice}
+%\documentclass[tutorial]{ieice}
+%\documentclass[letter]{ieice}
+%\documentclass[brief]{ieice}
+%\usepackage[dvips]{graphicx}
+%\usepackage[pdftex]{graphicx,xcolor}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[fleqn]{amsmath}
+\usepackage{newtxtext}
+\usepackage[varg]{newtxmath}
+\setcounter{page}{1}
+\def\ClassFile{\texttt{ieice.cls}}
+\field{A}
+%\vol{98}
+%\no{1}
+\SpecialSection{\LaTeXe\ Class File 
+                for IEICE Transactions}
+%\SpecialIssue{}
+\title{dqîñÊMwï\LaTeXe\ NXt@CÌg¢û}
+\titlenote{This paper was presented at ...}
+\authorlist{%
+ \authorentry{Hanako DENSHI}{m}{labelA}
+  \MembershipNumber{1111111}
+ \authorentry{Taro DENSHI}{n}{labelB}[labelC]
+  \MembershipNumber{}
+}
+%\breakauthorline{2}
+\affiliate[labelA]
+ {The author is with the Faculty ...}
+\affiliate[labelB]
+ {The author is with the Faculty ...}
+\paffiliate[labelC]
+ {Presently, the author is with ...}
+\received{2015}{10}{8}
+\revised{2015}{10}{31}
+
+\begin{document}
+\maketitle
+
+\begin{summary}
+±ÌðàÍC\LaTeXe\ ðpµÄ
+IEICE Transactions Ée·éÛÉp¢é
+NXt@Ci\ClassFile{}jÌ
+g¢ûðà¾µ½àÌÅ·D
+ ...
+\end{summary}
+\begin{keywords}
+AXL[Å p\LaTeXe{}CNXt@CC
+^CsOÌÓC®ÌLq
+\end{keywords}
+\section{Í¶ßÉ}
+ ...
+\section*{Acknowledgment}
+ ...
+\bibliographystyle{ieicetr}
+\bibliography{myrefs}
+\begin{thebibliography}{9}
+\bibitem{}
+\end{thebibliography}
+
+\appendix
+%\appendix*
+ ...
+\profile{Taro Denshi}{received the B.S. and 
+M.S. degrees ...}
+\end{document}
+\end{verbatim}
+
+\begin{itemize}
+\item
+\verb/\field/ ÍÌoÍÉp³êÜ·D
+ø«ÉÍCp¶_¶ÌJeS[Ì
+wèð \texttt{A}C\texttt{B}C\texttt{C}C\texttt{D}iå¶jÅ
+s¢Ü·DÎÍÈºÌæ¤ÉÈÁÄ¢Ü·D
+
+\halflineskip
+
+\noindent
+\begin{tabular}{cl}
+ \hline
+ \texttt{A} & Fundamentals \\
+ \texttt{B} & Communications \\
+ \texttt{C} & Electronics \\
+ \texttt{D} & Information and Systems\\
+ \hline
+\end{tabular}
+
+\halflineskip
+
+\item
+\verb/\vol/C\verb/\no/ ÍCe´eÅÍwè·é
+KvÍ èÜ¹ñi\texttt{template.tex} ©çà¢Ä èÜ·jD
+±êçÌR}hÍÊªÔÆðÉoÍ·éàÌÅC
+óüïÐÅwè³êÜ·D
+»ê¼ê \verb/\vol{98}/C\verb/\no{1}/ Ìæ¤É
+ArAÅwèµÜ·D
+
+\item
+\verb/\SpecialSection/ ¨æÑ \verb/\SpecialIssue/ ÍC
+\begin{verbatim}
+\SpecialSection{Image Processing}
+\end{verbatim}
+Ìæ¤ÉuCall for PapersvÉ¶½ÁWÌe[}ðwèµÜ·D
+
+\item
+\verb/\title/ ÉÍC_¶Ì^CgðwèµÜ·D
+CÓÌêÅüsµ½¢êÉÍC\verb/\\/ Åüs·é±ÆªÅ«Ü·D
+\verb/\title/ Ìø«ÍCÉàÒÌ¼OÆÆàÉ
+oÍ³êÜ·D^Cgª··¬ÄªÍÝo·êÍC
+\begin{verbatim}
+\title[p^Cg]{^Cg}
+\end{verbatim}
+Ìæ¤ÉpÉZ¢^CgðwèµÄ­¾³¢D
+
+\item
+_¶ªÅÇ±Å­\³ê½©CÇÌgDÌðó¯½©
+ÈÇðLq·éêÍC\verb/\titlenote/ ðgpµÄ­¾³¢D
+
+\item
+ÒÌXgðoÍ·éÉÍCÈºÌæ¤ÉLqµÄ­¾³¢D
+Ò¼CïõiC®ÈÇÌoÍÌÙª©®IÉ®¦çêÜ·D
+
+î{IÈX^CÍ
+\begin{verbatim}
+\authorlist{%
+ \authorentry{¼O}{ïõi}{x}
+  \MembershipNumber{ïõÔ}
+}
+\end{verbatim}
+Æ¢¤`Å·Dá¦ÎCÌæ¤ÉLqµÄ­¾³¢D
+\begin{verbatim}
+\authorlist{%
+ \authorentry{Hanako DENSHI}{m}{labelA}
+  \MembershipNumber{1111111}
+ \authorentry{Taro DENSHI}{n}{labelB}
+ \MembershipNumber{}
+}
+\end{verbatim}
+
+ÒÌXgð \verb/\authorentry/ ÉLqµC
+XgSÌð \verb/\authorlist/ Ìø«ÉµÜ·D
+
+\begin{itemize}
+\item
+æ1ø«ÍÒÌ¼OðwèµÜ·D©Í·×Äå¶ÅLqµÄ­¾³¢D
+
+\item
+æ2ø«ÍÒÌïõið\·At@xbgðLqµÜ·D
+wèÅ«é¶Í \texttt{m}C\texttt{n}C\texttt{a}C\texttt{s}C
+\texttt{h}C\texttt{f}C\texttt{e} Ì¤¿Ì¢¸ê©1ÂÅC
+ïõiÆÌÎÍÈºÌÊèÅ·D
+
+\halflineskip
+
+\noindent
+\begin{tabular}{lll}
+\hline
+\texttt{m} & Member\\
+\texttt{n} & Nonmember \\
+\texttt{a} & Affiliate Member\\
+\texttt{s} & Student Member\\
+\texttt{h} & Fellow, Honorary Member \\
+\texttt{f} & Fellow\\
+\texttt{e} & Senior Member\\
+\hline
+\end{tabular}%
+
+\halflineskip
+
+wèÈOÌ¶ðLqµÄàG[ÉÍÈèÜ¹ñªC
+³µ¢oÍð¾é±ÆÍÅ«Ü¹ñD
+
+ø«ÌOãÉ]ªÈXy[XðüêÈ¢æ¤ÉµÄ­¾³¢D
+\verb*/{m}/ Æ \verb*/{m }/ Íá¤àÌÆ»fµÜ·D
+
+\item
+æ3ø«ÍÒÌ®xðwèµÜ·D
+ãq·é \verb/\affiliate/ R}hÌæ1ø«ÉÎµÜ·D
+xÍåw¼EéÆ¼En¼ÈÇð\·ÈÈàÌÉµÄ­¾³¢D
+
+ÒÉ®ªÈ¢êÍC\texttt{none} ÆLqµÄ­¾³¢D
+®ª2J éêÍCxð ``,'' ÅæØÁÄLqµÄ­¾³¢
+i``,'' ÌãëÉXy[XðüêÈ¢Å­¾³¢jD
+
+xÌOãÉ]ªÈXy[XðüêÈ¢æ¤ÉµÄ­¾³¢D
+
+\item
+\verb/\MembershipNumber/ ÍïõÔðLqµÜ·D
+ïõÅÈ¢êÍøðóÉµÄ­¾³¢D
+%%±êÍe´eÌÅIÅÉÒ¼ÆÆàÉoÍ³êÜ·D
+\end{itemize}
+
+\item 
+E[AhXðLq·éêÍC
+\begin{verbatim}
+ \authorentry[name@xxx.yyy.zzz]
+  {Hanako DENSHI}{m}{labelA}
+\end{verbatim}
+ÆLqµÜ·D
+
+\item
+»ÝÌ®ðLq·éKvª éêÍC
+\begin{verbatim}
+ \authorentry{Hanako DENSHI}{m}{labelA}
+  [lableB]
+\end{verbatim}
+Ìæ¤ÉC\verb/\authorentry/ Ìæ4ø«ÆµÄC
+uPbgÉ»ÝÌxðwèµÜ·D
+ãq·é \verb/\paffiliate/ R}hÌæ1ø«ÉÎµÜ·D
+
+\item
+Òª½ÌêÈÇÉCÓÌêÅüsðs¢½¢êÍC
+\verb/\breakauthorline/ R}hðgpµÄ­¾³¢D
+
+\verb/\breakauthorline{3}/ Æ·êÎ3lÚÌÒÌãëÅüsµÜ·D
+J}ÅæØÁÄ¡ÌðwèÅ«Ü·D
+
+\item
+ÒÌ®Í \verb/\affiliate/ ÉLqµÜ·D
+î{IÈX^CÍ
+%\begin{verbatim}
+%\affiliate[label]{The author is with the
+%\EICdepartment{}
+%\EICorganization{®}
+%\EICaddress{Z}
+%}
+%\end{verbatim}
+\begin{verbatim}
+\affiliate[label]{®}
+\end{verbatim}
+Å·D
+
+ÒÌ»ÝÌ®Í \verb/\paffiliate/ R}hÉLqµÜ·D
+î{IÈX^CÍ
+\begin{verbatim}
+\paffiliate[label]{»ÝÌ®}
+\end{verbatim}
+Å·D
+
+»ê¼êCæ1ø«É \verb/\authorentry/ Åwèµ½
+xÉÎ·éxðwèµÜ·Dæ2ø«É®ðLqµÜ·D
+
+xÌOãÉ]ªÈXy[Xð}üµÈ¢Å­¾³¢D
+\verb/\authorlist/ ÉLqµ½xÌo»ÉLqµÄ­¾³¢D
+
+\item
+\verb/affiliate/ ÌxªC\verb/\authorentry/ Åwèµ½
+xÆÎµÈ¢Æ«ÍC[jObZ[Wª[ÉoÍ³êÜ·D
+
+\item
+\verb/\received/ ¨æÑ \verb/\revised/ É»ê¼êC
+e_¶ªó³ê½út¨æÑC³³ê½útðLqµÜ·D
+\verb/\received{2015}{10}{8}/ Ìæ¤ÉC
+NEEúðArAÅwèµÜ·D
+±êçÌR}hÍrªÉoÍ³êÜ·D
+%\verb/\finalreceived/ ÉÅIIÉó³ê½útðwèµÜ·D
+%È¨C\verb/\finalreceived/ ÍC
+%Trans.\ on FundamentalsiA ªûjÖÌe´eÅ
+%p·éR}hÅ·D
+\end{itemize}
+
+Èãà¾µ½R}hÍCvAuÉLqµÜ·D
+
+\verb/\begin{document}/ ÌÉC
+\verb/\maketitle/ ðu«Ü·D
+±êÉæÁÄ^CgÈÇªoÍ³êÜ·D
+
+\begin{itemize}
+\item
+vñÍ \texttt{summary} Â«ÉLqµÜ·D
+uPAPERvÅÍ 300 words öxÅCuLETTERvÅÍ 50 words öxÅLqµÜ·D
+rÅósðÍ³ÜÈ¢Å­¾³¢D
+
+\item
+L[[hÍ \texttt{keywords} Â«ÉLqµÜ·D
+4--5 words ÅLqµÜ·D
+ÅL¼âªÌêð¢Ä¬¶Å^CvµÜ·D
+
+\item
+Ó«iAcknowledgmentsjªKvÈêÍC
+\begin{verbatim}
+\section*{Acknowledgments}
+\end{verbatim}
+ÆLqµÄ­¾³¢D
+
+\item
+t^iAppendixjðLq·éêÍC
+\verb/\appendix/ Ü½Í \verb/\appendix*/ R}hð
+gpµÜ·D±êçÌá¢ÍC±êçÌR}hÌ
+ ÆÅ \verb/\section/ R}hðgpµ½Æ«É
+ÔÌt¯ûªÏíèÜ·i\LaTeXe\ WÌàÌÆÍÙÈèÜ·jD
+
+\verb/\appendix/ ðé¾·éÆC\verb/\section/ Í
+``Appendix A: ©oµ''C``Appendix B: ©oµ''C... ÆÈèÜ·D
+\verb/\appendix*/ ÌêÍC``Appendix: ©oµ'' ÆÈèÜ·D
+ãÒÍZNV©oµª 1 Âµ©È¢êÉgpµÜ·D
+
+±êçÌR}hðé¾·éÆC
+}\â®ÔÌoÍ`ÔªCA$\cdot$\,1CA$\cdot$\,2C... ÉÏíèÜ·D
+
+\item
+\label{profile:command}%
+\verb/\profile/ ÍCÒÐîðoÍ·é}NÅ·D
+\pageref{profile} y[WÌÒÐîÍÈºÌæ¤ÉLqµ½àÌÅ·D
+\begin{verbatim}
+\profile{Hanako Denshi}
+{received the B.S. and M.S. degrees 
+ ...}
+\end{verbatim}
+
+\begin{itemize}
+\item
+æ1ø«ÉÒÌ¼OðCæ2ø«ÉÒÌoðð^CvµÜ·D
+ósÍÍ³ÜÈ¢Å­¾³¢D
+
+\item
+ÒÌçÊ^ðæèÞêÍC
+$\mbox{¡} : \mbox{c} = 25 : 33$ Ì EPS Ü½Í PDF ðpÓµC
+ÒÌo»ÉCt@C¼ð a1.eps, a2.eps, ... ÆµÄ
+iPDF ÌêÍ a1.pdf, a2.pdf, ...j
+JgfBNgÉu«Ü·D
+±êçÌt@CªJgfBNgÉ êÎCRpCÉ
+©®IÉÇÝÝÜ·D
+
+ãLÌt@C¼ðgíÈ¢êÍCÈºÌæ¤ÉµÜ·D
+\begin{verbatim}
+\profile[file.eps]{Hanako Denshi}{...}
+\profile[file.pdf]{Hanako Denshi}{...}
+\end{verbatim}
+
+±êçÌêCpbP[WÆµÄ \texttt{graphics}C
+Ü½Í \texttt{graphicx} ªKvÅ·D
+
+EPS ÌæèÝÍCÈºÌR}h
+\begin{verbatim}
+\resizebox{25mm}{!}
+ {\includegraphics{a1.eps}}
+\end{verbatim}
+ÅsÁÄ¢Ü·©çCEPS t@CÉL^³êÄ¢é BoundingBox Ìlª
+ÀÛÌææèàå«¢êÈÇÉÍ BoundingBox ðC³·é
+Kvª èÜ·D
+
+JgfBNgÉ a1.eps ÈÇÌt@CªpÓ³êÄ¢È¢êÍC
+lpÌt[ÉÈèÜ·D
+\end{itemize}
+
+Ê^ðfÚµÈ¢êÍC\verb/\profile*/ R}hðgpµÜ·D
+\end{itemize}
+
+\section{NXt@CÉÖ·éÓ}\label{generalnote}
+
+\subsection{®ÉÂ¢Ä}
+
+{NXt@CÍC\texttt{fleqn} pbP[WðgÝñÅ¢Ü·D
+®Ìªª¶[©ç7\,mmÌÆ±ëÉC®ÔªEñ¹ÉoÍ³êé
+ÝèÉÈÁÄ¢Ü·D
+
+{Í2igÝÌÌÙÅ 1 iÌª·¢½ßC
+·¢®ªÍÝoµ½è®ÔÆdÈÁ½è·é±Æª
+¶¶éÆv¢Ü·D\texttt{Overfull} \verb/\hbox/ \texttt{...} Ì
+bZ[WÉCðÂ¯Ä­¾³¢D
+·¢®ÌÉÖµÄÍ Section~\ref{longeq} ðQlÉµÄ­¾³¢D
+
+\begin{table}[b]% 
+\caption{The font size in the \texttt{table} environment is 8 point.}
+\label{table:1}
+\setbox0\vbox{%
+\hbox{\verb/\begin{table}[b]%[tbp]/}
+\hbox{\verb/\caption{An example of table.}/}
+\hbox{\verb/\label{table:1}/}
+\hbox{\verb/\begin{center}/}
+\hbox{\verb/\begin{tabular}{c|c|c}/}
+\hbox{\verb/\hline/}
+\hbox{\verb/A & B & C\\/}
+\hbox{\verb/\hline/}
+\hbox{\verb/X & Y & Z\\/}
+\hbox{\verb/\hline/}
+\hbox{\verb/\end{tabular}/}
+\hbox{\verb/\end{center}/}
+\hbox{\verb/\end{table}/}
+}
+\begin{center}
+\begin{tabular}{c|c|c}
+\hline
+A & B & C\\
+\hline
+X & Y & Z\\
+\hline
+\end{tabular}
+\halflineskip
+\fbox{\box0}
+\end{center}
+\end{table}
+
+\subsection{}\ÉÂ¢Ä}
+
+\texttt{figure} ¨æÑ \texttt{table} Â«ÌàÅÍC
+¶TCYð \verb/\footnotesize/i8\,ptjÅgÞæ¤É
+ÝèµÄ¢Ü·iTable~\ref{table:1} QÆjD
+
+ÔÂ«}\ÌoÍÊuðwè·éêC
+\texttt{[h]} IvVÍgí¸C
+\texttt{[tb]} Ü½Í \texttt{[tbp]} ÈÇÆµÄC
+ÅÊÌV©nÉu¢Ä­¾³¢D
+
+\subsubsection{}ÌæèÝ}
+
+êÊÌì¬ÒªCtHgÌIðâüðl¶µ½K³Èf[^
+ióüïÐÅC³ðÁ¦éKvÌÈ¢àÌjðì¬·é±ÆÍ
+©Èèïµ¢àÌÅ·ªC½­Ì´eì¬Òª©ìÌ}ð
+´eÉgÝÞ±ÆªêÊÉsíêÄ¢Ü·ÌÅC
+Ó_ðÈPÉà¾µÜ·D
+
+\begin{itemize}
+\item
+\LaTeX\ É}ðæèÞêC³Ü´ÜÈtH[}bg`®Ìæð
+p·é±ÆªÅ«Ü·ªC{ÅÍ EPSiEncapsulated \PS{}jÜ½Í
+PDF ðp·é±Æð¨©ßµÜ·D
+
+\item
+EPS ÌêCÛ¶`®itH[}bgjÌ
+GR[fBOÍASCIIibinary ÅÈ­jÅÛ¶µÜ·D
+
+\item
+EPS t@CÌÅgpÅ«étHgÍCsÌÌ \PS\ v^É
+WÅõíÁÄ¢éàÌÉÀçêÜ·DÜ½C
+Windows ãÌc[Åì}·éêÍC
+·×ÄÌtHgð{\bfseries AEgC»}·éÌª³ïÅ·D
+üÌ¾³ÉàÓð¥¢Cüª 0.1\,mm ÈºÌàÌÍ
+gpðð¯éæ¤ÉµÄ­¾³¢D
+\end{itemize}
+
+±Ìæ¤ÉµÄì¬µÄàCK³ÅÈ¢f[^Í
+XLi[ÅÇÝæé±Æª èÜ·D
+
+Macintosh ãÅì}µÄCWindows â UNIX ãÅRpC·éêÍC
+EPS t@CÌüsR[hðCRÜ½ÍLFÌ
+üsR[hÉÏ·µÈ¢ÆC
+\begin{verbatim}
+! Unable to read an entire line---
+ bufsize=3000.
+Please alter the configuration file.
+\end{verbatim}
+Æ¢¤G[ð¶¶é±Æª èÜ·D
+
+æèÝûðÈPÉà¾µÜ·DÜ¸pbP[WÆµÄ
+\begin{verbatim}
+%% for eps
+\usepackage[dvips]{graphicx}
+%% for pdflatex
+\usepackage[pdftex]{graphicx,xcolor}
+%% for platex or uplatex
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\end{verbatim}
+ÈÇÆwèµi¨g¢ÌRpCÆhCoÉ¶Ä
+KÈàÌðwèµÄ­¾³¢jC
+
+\texttt{figure} Â«ÌLqÍCá¦Î
+\begin{verbatim}
+\begin{figure}[tb]
+\begin{center}
+ \includegraphics{file.eps}
+\end{center}
+\caption{LvV}
+\label{fig:1}
+\end{figure}
+\end{verbatim}
+Ìæ¤ÉLqµÜ·D
+
+\begin{verbatim}
+\includegraphics[scale=0.5]{file.eps}
+\end{verbatim}
+Æ·êÎC}ð 0.5 {ÉXP[OµÜ·D
+¯¶±Æð \verb/\scalebox/ ðgÁÄC
+Ìæ¤Éwè·é±ÆàÅ«Ü·D
+\begin{verbatim}
+\scalebox{0.5}
+ {\includegraphics{file.eps}}
+\end{verbatim}
+
+Ü½C 30\,mm Éµ½¢êÍC
+\begin{verbatim}
+\includegraphics[width=30mm]
+ {file.eps}
+\end{verbatim}
+ÆµÜ·D¯¶±Æð \verb/\resizebox/ ðgÁÄ
+Ìæ¤Éwè·é±ÆªÅ«Ü·D
+\begin{verbatim}
+\resizebox{30mm}{!}
+ {\includegraphics{file.eps}}
+\end{verbatim}
+
+³ÆÌ¼ûðwè·éêÍ
+\begin{verbatim}
+\includegraphics
+ [width=30mm,height=40mm]
+  {file.eps}
+\end{verbatim}
+Ü½Í
+\begin{verbatim}
+\resizebox{30mm}{40mm}
+ {\includegraphics{file.eps}}
+\end{verbatim}
+Å·D
+
+¼Éà³Ü´ÜÈpû@ª èÜ·©çC
+Úµ­ÍC¶£ \cite{FMi2,OandE,Okumura,Nakano} ÈÇð
+QlÉµÄ­¾³¢D
+
+\subsubsection{LvVÉÂ¢Ä}
+
+1iÌ}\ÌLvVÍ \verb/\columnwidth/iñ83.5\,mmjÉC
+2i²«ÌêÍeLXgÌÌ2/3iñ116\,mmjÉÈéæ¤É
+ÝèµÄ èÜ·iFig.\,\ref{fig:1} QÆjD
+
+\begin{figure}[t]% fig.1
+\setbox0\vbox{%
+\hbox{\verb/\begin{figure}[tbp]/}
+\hbox{\verb/... floating materials .../}
+\hbox{\verb/\capwidth=50mm/}
+\hbox{\verb/\caption{An example of figure./}
+\hbox{\verb/\label{fig:1}/}
+\hbox{\verb/\end{figure}/}
+}
+\begin{center}
+\fbox{\box0}
+\end{center}
+\caption{An example of figure.}
+\label{fig:1}
+\end{figure}
+
+\begin{itemize}
+\item
+LvVðCÓÌ·³ÅÜèÔµ½¢êÍC\verb/\caption/ ÌOÉ
+\begin{verbatim}
+\capwidth=140mm
+\end{verbatim}
+ÆLq·êÎC140\,mm Ì·³ÅÜèÔµÜ·D
+
+\item
+CÓÌêÅüsµ½¢êÍC
+\verb/\\/ ÅÜèÔ·±ÆªÅ«Ü·DWÌ \LaTeXe\ ÅÍ
+±¤¢¤g¢ûÍÅ«Ü¹ñÌÅÓµÄ­¾³¢D
+
+\item
+\verb/\label/ ðLq·éêÍC
+K¸ \verb/\caption/ Ì¼ãÉu«Ü·D¼ãÉu©È¢Æ \verb/\ref/ Å
+³µ¢ÔðQÆÅ«Ü¹ñD
+\end{itemize}
+
+\subsection{èCè`ÈÇÌÂ«}
+
+èCè`C½èÈÇÌè^Â«Í \verb/\newtheorem/ ª
+pÅ«Ü·\cite{latex,FMi1}D
+WÌNXt@CÅÍÂ«Ì¢¶ªC^bNÉÈèÜ·ªC
+{NXt@CÅÍCC^bNÉÈçÈ¢æ¤ÉÏXµÄ¢Ü·D
+
+½Æ¦ÎC
+\begin{verbatim}
+\newtheorem{theorem}{Theorem}
+\begin{theorem}[Fermat]
+There are no positive integers such that 
+$x^n + y^n = z^n$ for $n>2$. 
+I've found a remarkable proof of this fact, 
+but there is not enough space 
+in the margin [of the book] to write it. 
+(Fermat's last theorem). 
+\end{theorem}
+\end{verbatim}
+ÆLq·êÎC
+\newtheorem{theorem}{Theorem}
+%\let\thetheorem\relax
+\begin{theorem}[Fermat]
+There are no positive integers such that 
+$x^n + y^n = z^n$ for $n>2$. 
+I've found a remarkable proof of this fact, 
+but there is not enough space 
+in the margin [of the book] to write it. 
+(Fermat's last theorem). 
+\end{theorem}
+ÆoÍ³êÜ·D
+
+uTheoremvÉÔðÂ¯½­È¢êÍCá¦ÎC
+ãÌæ¤É theorem ªè`³êÄ¢éÆ·éÆC
+»Ì¼ãÉ
+\begin{verbatim}
+\let\thetheorem\relax
+\end{verbatim}
+ÆLq·êÎÔªÂ«Ü¹ñD
+
+\subsection{rÉÂ¢Ä}
+
+rÌJE^[ªiÞ²ÆÉ
+$^\dagger$C$^{\dagger\dagger}$C$^{\dagger\dagger\dagger}$C
+c\ 
+$^{\dagger\dagger\dagger\dagger\dagger\dagger}$C
+$^{*}$C$^{**}$C$^{***}$ Æ¢¤æ¤ÉÈèÜ·D
+r}[NÍy[W²ÆÉZbgµÜ·D
+
+\subsection{¶£Æ¶£ÔÌQÆ}
+
+\BibTeX\ ðpµÈ¢êÍC
+¶£XgÌLq\ddash 
+ÒÌCjVC¼OC_¶^CgCW[iÌªÌCªCC
+y[WC­sNÈÇÌÌÙ\ddash
+ÍCdqîñÊMwïÌÒWX^CÉµ§É]ÁÄ­¾³¢D
+XgÌì¬É½ÁÄÍC_¶eÉfÚµÄ é
+uInformation for Authors (Brief Summary)vCÜ½Í
+p¶_¶ueÌµ¨èv\hfil\break
+\texttt{http://www.ieice.org/eng/shiori/index.html}\hfil\break
+ðQÆµÄ­¾³¢D
+
+\BibTeX\ ðgÁÄC
+¶£pf[^x[Xt@C©ç¶£XgiQÆjðì¬·éêÍC
+¶£pX^CÆµÄ \texttt{ieicetr.bst} ðpµÄ­¾³¢D
+\BibTeX\ Ìgpû@Í¶£ \cite{latex,FMi1,Okumura} ÈÇð
+QlÉµÄ­¾³¢D
+
+\verb/\cite/ R}hÍC\texttt{citesort.sty} É
+­µ¾¯èðÁ¦½àÌðgpµÄ¢Ü·Dá¦ÎC
+\verb/\cite{/%
+\texttt{%
+FMi1,\allowbreak
+FMi2,\allowbreak
+FMi3,\allowbreak
+Okumura,\allowbreak
+PEn,\allowbreak
+latex,\allowbreak
+tex\allowbreak
+}\verb/}/ ÆLq·êÎC
+WÌX^CÅÍC
+[\tmpcite{FMi1}, \tmpcite{FMi2}, \tmpcite{FMi3}, 
+\tmpcite{Okumura}, \tmpcite{PEn}, \tmpcite{latex}, 
+\tmpcite{tex}] 
+ÆÈèÜ·ªC{NXt@CÅÍC
+Ôª±­êÍÈªµC©ÂÔÉÀ×Ï¦Ü·
+\cite{FMi1,FMi2,FMi3,Okumura,PEn,latex,tex}D
+
+\subsection{verbatim Â«}
+
+verbatim Â«Ìtg}[WCsÔCTCYð
+ÏX·é±ÆªÅ«Ü·\cite{Okumura}DftHgÍ
+\begin{verbatim}
+\verbatimleftmargin=0pt
+% --> tg}[WÍ 0pt 
+\def\verbatimsize{\normalsize}
+% --> tHgTCYÍ \normalsize
+\verbatimbaselineskip=\baselineskip
+% --> {¶Æ¯¶sÔ
+\end{verbatim}
+Å·ªC»ê¼êp[^âTCYwèðÏX·é±ÆªÅ«Ü·D
+\begin{verbatim}
+\verbatimleftmargin=2em
+% --> tg}[Wð 2em º°ÉÏX
+\def\verbatimsize{\small}
+% --> TCYð \small ÉÏX
+\verbatimbaselineskip=3mm
+% --> sÔð 3mm ÉÏX
+\end{verbatim}
+
+\subsection{\AmSLaTeX\ ÉÂ¢Ä}
+
+®ÌæèxÈLqÌ½ßÉC\AmSLaTeX\ ÌpbP[Wðg¤êÉÍC
+\texttt{amsmath} pbP[WÌIvVÆµÄ
+\texttt{[fleqn]} ðwèµÄ­¾³¢D
+\begin{verbatim}
+\usepackage[fleqn]{amsmath}
+\end{verbatim}
+
+\texttt{amsmath} pbP[WÍC½­Ìt@CðÇÝÝÜ·ªC
+{[hC^bN¾¯ðg¢½¢êÍC
+\begin{verbatim}
+\usepackage{amsbsy}
+\end{verbatim}
+ÅÏÝÜ·D
+
+Ü½CLÞ¾¯ðg¢½¢êÍC
+\begin{verbatim}
+\usepackage[psamsfonts]{amssymb}
+\end{verbatim}
+ÅÏÝÜ·D
+
+È¨C{[hC^bNÍ \verb/\mbox{\boldmath $x$}/ Éã¦ÄC
+\verb/\boldsymbol{x}/ ðg¤±Æð©ßÜ·D
+±êÈçÎC®Ìãt«Eºt«Åg¤Æ¶ª¬³­ÈèÜ·D
+
+\subsection{¢­Â©Ì}N}\label{etc}
+
+Ìæ¤È}Nðè`µÄ èÜ·DKvÉ¶ÄgÁÄ­¾³¢D
+
+\begin{itemize}
+\item
+uØ¾IvÈÇðÓ¡·é ``$\Box$'' LðoÍ·é
+}NÆµÄ \verb/\QED/ ðè`µÄ èÜ·\cite{tex}D
+\verb/\hfill $\Box$/ Æ¢¤LqÍC±ÌLÌ¼OÌ¶ªsÉéêC
+±ÌLªÌsÌsªÉÄµÜ¤±Æª éÌÅ©ßçêÜ¹ñD
+\verb/\QED/ ðgÁÄ­¾³¢D$\Box$ LðoÍ·éÉÍC
+pbP[WÆµÄ \verb/\usepackage{latexsym}/ ªKvÅ·D
+
+\item
+Ü½C\verb/\halflineskip/ Æ \verb/\onelineskip/ Æ¢¤
+cûüÌóðüêé}Nðè`µÄ¢Ü·D
+¼OÌÊèC¼só¯C1só¯ÉgpµÄ­¾³¢D
+
+\item 
+±ÌNXt@CÅÍCTable~\ref{table:2} Ìæ¤É 
+\verb/\RN/ Æ \verb/\FRAC/ Æ¢¤}Nð
+è`µÄ¢Ü·\cite{tex,Okumura}D
+
+\item
+ñ{_bVÌ``\ddash ''ÍC
+\verb/\ddash/ Æ¢¤}NðgÁÄ­¾³¢D
+``---'' ð2ÂdËéÆCÔÉá±ÌXy[Xªüé±Æª èÜ·D
+\end{itemize}
+
+
+\begin{table}[tb]% 
+\caption{\texttt{\symbol{"5C}RN} Æ \texttt{\symbol{"5C}FRAC}}
+\label{table:2}
+\begin{center}
+%\tabcolsep=1mm
+%\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{|cc|cc|}
+ \hline
+ \verb/\RN{2}/
+  & \verb/\RN{117}/
+   & \verb/\FRAC{$\pi$}{2}/
+    & \verb/\FRAC{1}{4}/ \\
+ \hline
+ \RN{2} & \RN{117} & \FRAC{$\pi$}{2} & \FRAC{1}{4} \\
+ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+
+\section{üµ¢gÅÌ½ßÉ}\label{typesetting}
+
+\subsection{gÅÌ[}
+
+\begin{enumerate}
+\item
+¶ðC^bNÌÉ·éêC
+\verb/\textit/ ÈÇÌø«ðàÂR}hÍC
+©®IÉC^bNâ³ªÁ¦çêÜ·ªC
+\verb/\itshape/ ÈÇÌtHgÏXðé¾·éR}hÍC
+C^bNâ³i\verb#\/#jªKvÅ·D
+
+\item
+\verb/et al./ â \verb/etc./ Ìæ¤ÉC¶ÅÍÈ¢¯êÇà
+¬¶É±¢ÄsIhðg¤Æ«ÍC
+\TeX\ É¶ÅÍÈ¢±Æðw¦·é½ßÉC
+\verb*/et al.\ / â \verb*/etc.\ / ÆµÄ­¾³¢D
+
+å¶É±­sIhª¶Å éÆ«ÍC
+\TeX\ É¶Å é±Æðw¦·é½ßÉC\allowbreak
+\verb/U.S.A\@./C\allowbreak
+\verb/NEC\@./ ÈÇÆµÜ·D
+
+\item
+\verb/Mr./ Ìæ¤ÉCsIhÌãëÉXy[XªKv¾¯êÇà
+»±Åüsð}§·éÆ«ÉÍCXy[XÉã¦ÄC\verb/~/ ð
+g¢Ü·i\verb*/Mr.~/jD
+
+\item
+Figure, Section, Equation ÌLqÍC¶ªÌêÌÝC
+tXyÅ Figure~1 shows ... ÈÇÆµC¶â¶ÅÍC
+ªêiin Fig.\,1, in Sect.\,2, in Eq.\,(3) ÈÇjÉµÜ·D
+
+\item
+\verb*/( word )/Ìæ¤É ``(~)'' àÌPêÌOãÉ
+Xy[XðüêÈ¢Å­¾³¢D
+
+\item
+ACgÈOÌêÅCósðL­Æé½ßC\verb/\\/ Éæé
+­§üsðp·éÌÍæ­ èÜ¹ñD
+ósÌ¼OÉ \verb/\\/ ðüê½èC
+\verb/\\/ ð2ÂdËêÎCm©ÉcûüÌXy[XªLªèÜ·ªC
+\texttt{Underfull} \verb/\hbox/ \texttt{...} Ì
+bZ[Wª½­³ñoÍ³êÄC
+dvÈbZ[Wð©Æµª¿ÉÈèÜ·D
+
+\item
+vOXgÈÇCCfgÌÊuªdvÈàÌÍC
+Íí´i\verb/\hspace*{??mm}/ Ìgpâ \verb/\\/ ÈÇÉæé­§üsjÅ
+®`·éÌÅÍÈ­C{\ttfamily list} Â«â {\ttfamily tabbing} Â«ÈÇÌ
+pð©ßÜ·D
+
+\item
+nCti\texttt{-}jC
+ñª_bVi\texttt{--}jC
+Sp_bVi\texttt{---}jÌæÊðµÄ­¾³¢D
+nCtÍCwell-knownÈÇêÊIÈ¢PêÌAÉC
+ñª_bVÍCpp.298--301Ìæ¤ÉÍÍð¦·Æ«ÉC
+Sp_bV em-dashi---jÍC
+ºÉ¦·æ¤É¶ÍÌAÉgpµÄ­¾³¢D
+
+\halflineskip
+
+mánThe em-dash is even longer---it's used as punctuation, 
+as in this sense, and you get it by typing \texttt{---}. \cite{Seroul}
+
+\halflineskip
+
+\item
+®[hÌÅÌnCtCñª_bVC}CiXÌæÊðµÄ­¾³¢D\par
+á¦ÎC\par
+
+\noindent
+\verb/$A^{b-c}$/\par
+\noindent
+\hspace{2em}$A^{b-c}$ $\Rightarrow$ }CiXL\par
+\noindent
+\verb/$A^{\mathrm{b}\mbox{\scriptsize -}/\hfil\break
+ \verb/\mathrm{c}}$/\par
+\noindent
+\hspace{2em}$A^{\mathrm{b}\mbox{\scriptsize -}\mathrm{c}}$
+ $\Rightarrow$ nCt\par
+\noindent
+\verb/$A^{\mathrm{b}\mbox{\scriptsize --}/\hfil\break
+ \verb/\mathrm{c}}$/\par
+\noindent
+\hspace{2em}$A^{\mathrm{b}\mbox{\scriptsize --}\mathrm{c}}$
+ $\Rightarrow$ ñª_bV\par
+\noindent
+\verb/$A^{\mathrm{b-c}$/\par
+\noindent
+\hspace{2em}$A^{\mathrm{b-c}}$
+ $\Rightarrow$ }CiXL\par
+
+\item
+®ÌÅC\verb/</ â \verb/>/ ðÊÌæ¤Égp·é±Æª
+æ­ÝçêÜ·ªC
+®ÅÍ±ÌLÍsLÆµÄµíêC»ÌOãÉXy[XªüèÜ·D
+±Ìæ¤È`ÌLðÊÆµÄg¢½¢Æ«ÍC\allowbreak
+\verb/\langle/i$\langle$jâ \verb/\rangle/i$\rangle$jðgÁÄ­¾³¢D
+
+\item
+®ª $+$ Ü½Í $-$ ÅnÜéêC$+$ â $-$ ÍPZqÆ
+ÝÈ³êÜ·iÂÜèC$+x$ Æ $x+y$ Ì $+$ ÌOãÌXy[XÍ
+ÏíèÜ·jDµ½ªÁÄC¡sÌ®Å $+$ â $-$ ªæªÉ­éêÍC
+»êçª2ZqÅ é±Æð¦·Kvª èÜ·\cite{latex}D
+¡sÌ®ÅACgð·éÆ«ÉÍC
+ø«ªóÌ \verb/\mbox{}/ ð¼OÉu«Ü·D
+\begin{verbatim}
+\begin{eqnarray}
+y &=& a + b + c + ... + e\\
+  & & \mbox{} + f + ... 
+\end{eqnarray}
+\end{verbatim}
+
+\item
+\TeX\ ÍCiÌ®ÌÅÍüsð
+¤Ü­âÁÄ­êÈ¢±Æª éÌÅC
+»¤¢¤êÉÍC\verb/\allowbreak/ ðgp·é±Æð©ßÜ·D
+±êÍ­§üs·éÌÅÍÈ­Cüsð£·R}hÅ·D
+\end{enumerate}
+
+\subsubsection{·¢®Ì}\label{longeq}
+
+®Æ®ÔªdÈÁ½è®ªÍÝoµ½è·éêÌ
+ÎôðC¢­Â©°Ü·D
+
+\halflineskip
+\hfuzz10pt
+
+\noindent
+\textbf{á1}F
+\begin{equation}
+ y=a+b+c+d+e+f+g+h+i+j+k+l+m
+\end{equation}
+\hskip\parindent
+ãÌæ¤É®Æ®Ôª©ÈèÚßµ½èdÈÁ½è·éêÍC
+Ü¸C2ZLâÖWLÌOãð \verb/\!/ ÅÍ³ñÅ
+kßéû@ª èÜ·D
+\begin{verbatim}
+\begin{equation}
+ y\!=\!a\!+\!b\!+\!c\!+\! ... \!+\!m
+\end{equation}
+\end{verbatim}
+\begin{equation}
+ y\!=\!a\!+\!b\!+\!c\!+\!d\!+\!e\!+\!f\!+\!g\!+\!h\!+\!i\!
+  +\!j\!+\!k\!+\!l\!+\!m
+\end{equation}
+
+%\halflineskip
+
+\noindent
+\textbf{á2}F
+kßÄàCdÈÁ½èÍÝoµÄµÜ¤êÍC
+\texttt{equation} Éã¦Ä \texttt{eqnarray} Â«ðpµÄ
+\begin{verbatim}
+\begin{eqnarray}
+ y &=& a+b+c+d+e+f+g+h\nonumber\\
+   & & \mbox{}+i+j+k+l+m
+\end{eqnarray}
+\end{verbatim}
+ÆLq·êÎC
+\begin{eqnarray}
+ y &=& a+b+c+d+e+f+g+h\nonumber\\
+   & & \mbox{}+i+j+k+l+m
+\end{eqnarray}
+Ìæ¤ÉÈèÜ·D
+
+\halflineskip
+
+\noindent
+\textbf{á3}F
+®ðrÅØè½­È¢êC
+\verb/\mathindent/ ðÏXµÜ·D
+\begin{verbatim}
+\mathindent=0mm % <-- [A]
+\begin{equation}
+ y=a+b+c+d+e+f+g+h+i+j+k+l+m
+\end{equation}
+\mathindent=7mm % <-- [B] ftHg
+\end{verbatim}
+ÆLq·êÎi\texttt{[A]}jC
+\mathindent=0mm
+\begin{equation}
+ y=a+b+c+d+e+f+g+h+i+j+k+l+m
+\end{equation}
+\mathindent=7mm
+ÆÈÁÄC®Ìªª¶[É«Ü·D
+±ÌêC»Ì®Ì ÆÅ \verb/\mathindent/ Ìp[^ð
+³Éß·±ÆðYêÈ¢Å­¾³¢i\texttt{[B]}jD
+
+\halflineskip
+
+\pagebreak[2]
+
+\noindent
+\textbf{á4}F
+\nobreak
+\begin{equation}
+ \int\!\!\!\int_S \left( \frac{\partial V}{\partial x}
+  - \frac{\partial U}{\partial y} \right)dxdy
+  = \oint_C \left(U\frac{dx}{ds}+V\frac{dy}{ds}\right)ds
+\end{equation}
+\hskip\parindent
+á 4 Ìæ¤ÉC$=$ ÜÅª·­ÄC®ªÍÝoµ½èC
+®Æ®Ôª­ÁÂ­êÉÍ
+\begin{verbatim}
+\begin{eqnarray}
+ \lefteqn{
+  \int\!\!\!\int_S 
+  \left(\frac{\partial V}{\partial x}
+  -\frac{\partial U}{\partial y}\right) dxdy
+ }\quad \nonumber\\
+ &=& \oint_C \left(U \frac{dx}{ds}
+      + V \frac{dy}{ds} \right)ds
+\end{eqnarray}
+\end{verbatim}
+Ìæ¤É \verb/\lefteqn/ ðgÁÄLq·êÎC
+\begin{eqnarray}
+ \lefteqn{
+  \int\!\!\!\int_S 
+  \left(\frac{\partial V}{\partial x}
+  -\frac{\partial U}{\partial y}\right) dxdy
+ }\quad \nonumber\\
+ &=& \oint_C \left(U \frac{dx}{ds}
+      + V \frac{dy}{ds} \right)ds
+\end{eqnarray}
+ÆÈèÜ·D
+
+\halflineskip
+
+\noindent
+\textbf{á5}F\texttt{array} Â«ðgÁ½sñ®
+\begin{equation}
+A = \left(
+  \begin{array}{cccc}
+   a_{11} & a_{12} & \ldots & a_{1n} \\
+   a_{21} & a_{22} & \ldots & a_{2n} \\
+   \vdots & \vdots & \ddots & \vdots \\
+   a_{m1} & a_{m2} & \ldots & a_{mn} \\
+  \end{array}
+    \right) \label{eq:ex1}
+\end{equation}
+Å®ªÍÝo·êÍC
+\verb/\small/ ÈÇÅ®SÌÌTCYðÏ¦éOÉC
+\begin{verbatim}
+\begin{equation}
+\arraycolsep=3pt %            <--- [C]
+A = \left(
+  \begin{array}{@{\hskip2pt}% <--- [D]
+                cccc
+                @{\hskip2pt}% <--- [D]
+               }
+   a_{11} & a_{12} & \ldots & a_{1n} \\
+   a_{21} & a_{22} & \ldots & a_{2n} \\
+   \vdots & \vdots & \ddots & \vdots \\
+   a_{m1} & a_{m2} & \ldots & a_{mn} \\
+  \end{array}
+    \right) 
+\end{equation}
+\end{verbatim}
+\texttt{[C]} Ìæ¤ÉC\verb/\arraycolsep/ Ìlð
+¬³­µÄÝé©iftHgÍ5\,ptjC
+\texttt{[D]} Ìæ¤É \texttt{@} \»ðgÁÄÝé±Æð©ßÜ·D
+\begin{equation}
+\arraycolsep=3pt
+A = \left(
+  \begin{array}{@{\hskip2pt}cccc@{\hskip2pt}}
+   a_{11} & a_{12} & \ldots & a_{1n} \\
+   a_{21} & a_{22} & \ldots & a_{2n} \\
+   \vdots & \vdots & \ddots & \vdots \\
+   a_{m1} & a_{m2} & \ldots & a_{mn} \\
+  \end{array}
+    \right) \label{eq:ex2}
+\end{equation}
+(\ref{eq:ex1}) Æ (\ref{eq:ex2}) ðä×Ä­¾³¢D
+
+\halflineskip
+
+\noindent
+\textbf{á6}F
+\texttt{pmatrix}C\texttt{vmatrix} Â«ÈÇðp·éÆ«ÉÍC
+á5Ì\texttt{[C]}Æ¯¶û@ªg¦Ü·D
+\begin{verbatim}
+\begin{equation}
+ \arraycolsep=3pt
+ A = \begin{pmatrix}
+      a_{11} & a_{12} & \ldots & a_{1n} \cr
+      a_{21} & a_{22} & \ldots & a_{2n} \cr
+      \vdots & \vdots & \ddots & \vdots \cr
+      a_{m1} & a_{m2} & \ldots & a_{mn} \cr
+     \end{pmatrix}
+\end{equation}
+\end{verbatim}
+\begin{equation}
+ \arraycolsep=3pt
+ A = \begin{pmatrix}
+      a_{11} & a_{12} & \ldots & a_{1n} \cr
+      a_{21} & a_{22} & \ldots & a_{2n} \cr
+      \vdots & \vdots & \ddots & \vdots \cr
+      a_{m1} & a_{m2} & \ldots & a_{mn} \cr
+     \end{pmatrix}
+\end{equation}
+
+%\texttt{amsmath} pbP[Wðp·éêÍC
+%\verb/\pmatrix/ R}hÅÍÈ­ \texttt{pmatrix} Â«ÉÈèÜ·D
+%±ÌêÌà¾ÍCá 5 ªQlÉÈèÜ·D
+
+Èã°½æ¤ÈÅàÈ¨®ªÍÝo·êÍC
+ Üè©ßçêÜ¹ñªCÈºÌæ¤Èû@ª èÜ·D
+\begin{itemize}
+\item 
+\texttt{small}C\texttt{footnotesize} Å®SÌðÍÞD
+\item 
+ªª¡É·¢êÍCªqEªêð \texttt{array} Â«Å2KÄÉ·éD
+\item 
+\verb/\scalebox/ ðgÁÄC®Ìêàµ­ÍSÌðXP[O·éD
+\item 
+ñi²«Ì \texttt{table*} àµ­Í \texttt{figure*} Â«É}ü·é
+i±ÌêC®ÔÉÓ·éKvª èÜ·jD
+\end{itemize}
+
+\section{ÒWpf[^ñoû@}
+\label{source}
+
+ÒWpf[^ÌñoÉÖµÄÍC_¶eÌ
+uInformation for Authors (Brief Summary)vC
+Ü½Íp¶_¶ueÌµ¨èvðQÆµÄ­¾³¢D
+»Ì¤¦ÅCÈºÌ_Éà²ÓµÄ­¾³¢D
+\begin{itemize}
+\item
+\[Xt@CÍCCÌt@CÉCN[h·éÌÅÍÈ­C
+1 {Ìt@CÉÜÆßÄ­¾³¢D
+\BibTeX\ ©ç¶¬µ½ \texttt{bbl} t@CðCÌt@CÉ
+}üµÄ­¾³¢D
+
+\item 
+ÒÆ©Ì}Nt@CCÁêÈX^Ct@CC
+}Ì EPSiPDFjf[^ÈÇC
+RpCÉKvÈ\[Xt@CÍK¸YtµÄ­¾³¢D
+\end{itemize}
+
+%\section*{Acknowledgment}
+
+{NXt@Cì¬É ½ÁÄQlÉµ½¶£àÜßC
+\TeX\ ÖWÌ¶£ðÈºÉf°Ü·D
+
+%\bibliographystyle{ieicetr}
+%\bibliography{myrefs}
+\begin{thebibliography}{99}
+\bibitem{Seroul}
+R. Seroul and S. Levy, 
+A Beginner's Book of \TeX,  
+Springer-Verlag, New York, 1989.
+
+%\bibitem{ohno}
+%åì`vÒC
+%\TeX\ üåC
+%¤§oÅC1989.
+
+%\bibitem{nodera1}
+%ì²uC
+%yX\LaTeX{}C
+%¤§oÅC1990. 
+
+%\bibitem{bibunsho}
+%º°FC\LaTeX\ ü¶ì¬üåC
+%Zp]_ÐC1991. 
+
+%\bibitem{itou}
+%É¡alC
+%\LaTeX\ g[^KChC
+%GaVXeg[fBOC1991.
+
+%\bibitem{nodera2}
+%ì²uC
+%¡x±»\AmSLaTeX{}C
+%¤§oÅC1991.
+
+\bibitem{tex}
+D.E. Nk[XC\TeX\ ubNüùVÅC
+AXL[CC1992. 
+
+\bibitem{jiyuu}
+éèG÷C
+\LaTeX\ ©R©ÝC
+TCGXÐCC1992.
+
+%\bibitem{impress}
+%ëJDPC
+%ú{ê\LaTeX\ èÔX^CWNo.1--3C
+%CvXC1992--1994.
+
+%\bibitem{styleuse}
+%ÃìO¶CâFNvC
+%\LaTeX\ Ì}NâX^Ct@CÌpC
+%1993.
+
+\bibitem{Bech}
+S. von Bechtolsheim, 
+\TeX\ in Practice, vols.\RN{1}--\RN{4}, 
+Springer-Verlag, New York, 1993.
+
+%\bibitem{fujita1}
+%¡cáÁìC
+%»wÒE¶»wÒÌ½ßÌ\LaTeX---p\RÉæé
+%_¶ì¬ÌèøC
+%»w¯lC1993.
+
+%\bibitem{Gr}
+%G. Gr\"{a}tzer, 
+%Math into \TeX\,--\,A Simple Introduction to \AmSLaTeX,  
+%Birkh\"{a}user, 1993.
+
+%\bibitem{Kopka}
+%H. Kopka and P.W. Daly, 
+%A Guide to \LaTeX, 
+%Addison-Wesley, 1993.
+
+\bibitem{Walsh}
+N. Walsh, 
+Making \TeX\ Work, 
+O'Reilly \& Associates, Sebastopol, 1994.
+
+\bibitem{Salomon}
+D. Salomon, 
+The Advanced \TeX{}book, 
+Springer-Verlag, New York, 1995.
+
+\bibitem{Nakano}
+ì«Cú{ê \LaTeXe ubNCAXL[CC1996.
+
+\bibitem{Fujita2}
+¡cáÁìC\LaTeXe\ KòC
+AW\EEFXCEpubV[YEWpCC1996.
+
+\bibitem{OandE}
+³ÞÈC]û¯pC
+p\LaTeXe\ for Windows Another Manual Vol.0--2,  
+\tgoNCC1996--1997.
+
+\bibitem{Eguchi}
+]û¯pCGhostscript Another ManualC
+\tgoNCC1997.
+
+\bibitem{Abrahams}
+%P.W. Abrahams, 
+%\TeX{} for the Impatient,  
+%Addison-Wesley, 1992.
+|[EWEGCunC
+¾õ \TeX{}C
+AW\EEFXCEpubV[YEWpCC1997.
+
+\bibitem{FMi1}
+%M. Goossens, F. Mittelbach, and A. Samarin, 
+%The \LaTeX\ Companion, 
+%Addison-Wesley, 1994.
+}CPEO[ZXCtNE~beobnCALT_[ET}C
+\LaTeX\ RpjICAXL[CC1998.
+
+\bibitem{Lipkin}
+B.S. Lipkin, 
+\LaTeX\ for Linux, Springer-Verlag New York, 1999. 
+
+\bibitem{Eijkhout}
+%V. Eijkhout, 
+%\TeX{} by Topic,  
+%Addison-Wesley, 1991.
+rN^[EGCR[C
+\TeX\ by Topic---\TeX\ ðæ­[­mé½ßÌ39ÍC
+AXL[CC1999.
+
+\bibitem{latex}
+X[E|[gC
+¶VXe\LaTeXe{}C
+sA\EGfP[VCC1999. 
+
+\bibitem{Okumura}
+º°FCmüùÅn\LaTeXe\ ü¶ì¬üåC
+Zp]_ÐCC2000.
+
+\bibitem{FMi2}
+%M. Goossens, S. Rahts, and F. Mittelbach, 
+%The \LaTeX\ Graphics Companion, Addison-Wesley, 1997.
+}CPEO[ZXCZoX`EbcCtNE~beobnC
+\LaTeX\ OtBbNXRpjIC
+AXL[CC2000. 
+
+\bibitem{FMi3}
+%M. Goossens, and S. Rahts, 
+%The \LaTeX\ Web Companion,  
+%Addison-Wesley, 1999. 
+}CPEO[ZXCZoX`EbcC
+\LaTeX\ Web RpjIC
+AXL[CC2001. 
+
+\bibitem{PEn}
+y[WEG^[vC[XC
+\LaTeXe\ }N \& NXvO~OîbðàC
+Zp]_ÐCC2002. 
+
+\bibitem{Fujita3}
+¡cáÁìC\LaTeXe\ R}hubNC
+\tgoNCC2003. 
+
+\bibitem{Yoshinaga}
+giOüC
+\LaTeXe\ }N \& NXvO~OÀHðàC
+Zp]_ÐCC2003. 
+\end{thebibliography}
+
+\appendix
+
+\section{A4pÖÌoÍÆ PDF Ìì¬û@}
+\label{printandpdf}
+
+\begin{itemize}
+\item 
+\texttt{dvips} ðgpµÄA4pÉoÍ·éêÌ
+p[^Í¨¨æ»ÈºÌæ¤ÈÝèÉÈèÜ·D
+\begin{verbatim}
+dvips -Pprinter -t a4 -O 0mm,8mm file.dvi
+\end{verbatim}
+\texttt{printer} ÉÍ¨g¢Ìv^¼ðwèµÜ·D
+IvVÌ \texttt{-t a4} ÍÈªÅ«Ü·D
+
+\item 
+PDF É«o·ÉÍOÊèÌû@ª èÜ·D
+\begin{enumerate}
+\item 
+RpCÆµÄ \texttt{pdflatex} ðgp·éD
+±ÌêCa¶Ì¶ÍgíÈ¢æ¤ÉµÄ­¾³¢D
+
+RpC·éêÍC\texttt{graphicx} ÌIvVÆµÄ
+\texttt{pdftex} ÈÇðwèµÜ·DÜ½CÇÝÞ}Í
+\texttt{epstopdf} ÈÇÌc[ðpµÄ 
+\texttt{pdf} `®É·éKvª èÜ·D
+
+\item
+dvipdfmx ðgÁÄ PDF ÉÏ··éiÈºÅÍiÌÖWÅÜèÔµÜ·jD
+\begin{verbatim}
+dvipdfmx -p 210mm,280mm -x 1in -y 1in
+ -o file.pdf file.dvi
+\end{verbatim}
+IvVÌ \texttt{-x 1in -y 1in} ÍÈªÅ«Ü·D
+
+\item
+dvips ðgpµÄCps É«oµÜ·D
+\texttt{printer} ÉÍCgp·év^¼ðLqµÜ·D
+Y·éy[p[TCYi210mm $\times$ 280mmjÌ
+è`ª \texttt{config.ps} ÉÈ¢½ßA4Ìå«³ÉoÍµÜ·D
+\begin{verbatim}
+dvips -Pprinter -t a4 -O 0mm,8mm 
+ -o file.ps file.dvi
+\end{verbatim}
+IvVÌ \texttt{-t a4} ÍÈªÅ«Ü·D
+
+É Acrobat Distiller Å PDF ÉÏ·µÜ·D
+\end{enumerate}
+\end{itemize}
+
+\section{íµ½R}h}
+
+{ÌÌÙÉKvÌÈ¢R}hÍíµÄ¢Ü·D
+íµ½R}hÍC
+\begin{verbatim}
+\part
+\theindex
+\tableofcontents
+\titlepage
+\end{verbatim}
+ÈÇÆCy[WX^CðÏX·éR}h
+i{\ttfamily headings}C{\ttfamily myheadings}jÅ·D
+
+\profile{Hanako Denshi}{received the B.S. and M.S. degrees 
+in Electrical Engineering from Denshi Institute of Technology 
+in 1997 and 1999, respectively. 
+During 1997--1999, she stayed in CRL, Ministry of Posts 
+and Telecommunications of Japan to study beamforming antennas. 
+She is now with Denshi, Inc.}
+\label{profile}
+
+\profile{Taro Denshi}{received the B.S. and M.S. degrees 
+in Electrical Engineering from Denshi Institute of Technology 
+in 1997 and 1999, respectively. 
+During 1997--1999, he stayed in CRL, Ministry of Posts 
+and Telecommunications of Japan to study beamforming antennas. 
+He is now with Denshi, Inc.}
+
+\end{document}
+
+
+\section*{References X^CêÉÂ¢ÄÌ¨è¢\hfil\break
+          iNon-\BibTeX\ [UÌ½ßÉj}
+\label{Ref}
+
+\TeX\ e{Ìbgð©·½ßÉC®S´eð²t­¾³¢D
+ÁÉReferencesÌX^CÉÂ«ÜµÄÍCÈºÌKèðK¸¨çè­¾³¢D
+
+\halflineskip
+
+\noindent
+{\bf Ò¼ÌüÍF}
+
+\halflineskip
+
+First authorÌCjVi¼C~hl[ÌªÌÔÍó¯È¢jC
+©Csecond authorÌCjVC©CDDDÅãÍCandÅÂÈ¢ÅC
+last authorÌCjVC©ÆµCR}ÅæØÁÄ¶£¼ð±¯éD
+
+\halflineskip
+
+\noindent
+{\bf ¶£ÌüÍF}
+
+\halflineskip
+
+1.\ {\bf uW[ivÜ½ÍuvV[fBOXvfÚ_¶}
+
+_¶^CgÍCÅ¾¯å¶C ÆÍ¬¶ÆµC_uR[e[VÅ
+­­éiIíèÌR}ÍC_uR[e[VÌà¤ÉjD
+fÚ¼Íroman Caps. \& lower lettersÉµC
+KèÌªÌiºL\QÆjðgpD
+ªCCÅivol.\ no.\ pp.ÌsÆÌÔÍó¯È¢jC­siªLjð
+»ê¼êR}ÅæØèC
+ÅãÉ­sNðsIhÅÆ¶éDÅÍ --inCt2ÂjÅÂÈ®±ÆD
+
+
+\def\thebibliography#1{% \section*{\small\bf References}
+ \list{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \setlength{\itemsep}{0pt}
+ \parskip0pt
+ \small
+ \baselineskip 3.5mm
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy\clubpenalty4000\widowpenalty4000
+ \sfcode`\.=1000\relax}
+
+\halflineskip
+
+\noindent
+áF
+\begin{thebibliography}{9}
+\bibitem{1}
+K. Matsumoto, Y. Hayashi, T. Nagata, and T. Yoshimoto, 
+``GaAs inversion-base bipolar transistor with graded emitter barrier,'' 
+Jpn.\ J. Appl.\ Phys., vol.27, no.6, pp.L1154--L1156, 1988.
+
+\bibitem{2}
+C.A. Klein, ``Design of shaped-beam antennas through minimax 
+gain optimization,'' IEEE Trans.\ Antennas \& Propag., 
+vol.AP-32, no.9, pp.963--968, 1984.
+
+\bibitem{3}
+S. Moriyama, ``Large scale circuit simulation based on the direct method,'' 
+Trans.\ IEICE, vol.J68-D, no.2, pp.83--90, Feb. 1985.
+
+\bibitem{4}
+N.B. Rabbat and H.Y. Hsieh, ``A latent macromodular approach 
+to large-scale sparse networks,'' IEEE Trans.\ Circuits \& Syst., 
+vol.CAS-23, no.12, pp.645--752, Dec. 1976.
+
+\bibitem{5}
+A. Takai, H. Abe, and T. Kato, ``Subsystem optical interconnections 
+using long-wavelength LD and singlemode fiber arrays,'' 
+Proc.\ 42nd Electronic Components and Technology Conf., 
+pp.93--97, 1992.
+
+\bibitem{6}
+T. Kage, J. Niitsuma, K. Teramae, S. Shimogori, and Y. Izuta, 
+``PARACS: a parallel circuit simulator,'' 
+Proc.\ IEICE 5th Karuizawa Workshop on Circuits \& Systems, 
+pp.213--218, Apr. 1992.
+
+\bibitem{7}
+R. Kawamura, K. Sato, and I. Tokizawa, 
+``Failed path restoration with distributed control scheme in ATM networks,'' 
+Proc.\ IFIP/IEEE International Workshop on DSOM\,'92, 
+Munich, Oct. 1992.
+\end{thebibliography}
+
+2.\ {\bf uPs{v}
+
+Ò¼Ì ÆCPs{^Cgð_uR[e[VÅ­­ÁÄ
+roman Caps.\ \& lower lettersÅCÉCøpÍÜ½ÍÅC
+oÅÐiCo., Ltd.ÌÞÍsvjC­snC­sND
+ÒÒÌêÍC¼OÌÉ ed.\ ÆüêéD
+
+\halflineskip
+
+\noindent
+áF
+\begin{thebibliography}{9}
+\bibitem{8}
+J.G. Kemeny and J.L. Snell, ``Finite Markov Chains,'' 
+Springer-Verlag, Berlin, 1976.
+
+\bibitem{9}
+A.V. Aho, R. Sethi, and J.D. Ullman, ``Compilers: Principles, 
+Techniques, and Tools,'' Addison-Wesley, New York 1986.
+
+\bibitem{10}
+G.R. Bullock and P. Petrusz, ed., ``Techniques in Immuno-cytochemistry,'' 
+vol.1, Academic Press, London, 1982.
+\end{thebibliography}
+
+3.\ {\bf uPs{vÌêðøpÌê}
+
+øpªiÍCßC_¶jÌÒ¼Ì ÆCøpªÌ^Cgð
+Å¾¯å¶C ÆÍ¬¶ÆµC_uR[e[VÅ­­éD
+
+\halflineskip
+
+\noindent
+áF
+\begin{thebibliography}{9}
+\bibitem{11}
+H.K. Hartline, A.B. Smith, and F. Ratlliff, 
+``Inhibitory interaction in the retina,'' 
+in Handbook of Sensory Physiology, ed.\ M.G.F. Fuortes, 
+pp.381--390, Springer-Verlag,
+Berlin, 1972.
+\end{thebibliography}
+
+4.\ {\bf »Ì¼Ìá}
+
+\begin{thebibliography}{9}
+\bibitem{12}
+CCITT Recommendation I.610, ``B-ISDN Operation 
+and Maintenance Princeples and Functions,'' Nov. 1992.
+\end{thebibliography}
+
+\onelineskip
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\multicolumn{2}{l}{uvÌªL}\\
+\hline
+January & Jan. \\
+February & Feb. \\
+March & March \\
+April & April \\
+May & May \\
+June & June \\
+July & July \\
+August & Aug. \\
+Septembe & Sept. \\
+October & Oct. \\
+November & Nov. \\
+December & Dec. \\
+\hline
+\end{tabular}
+\end{center}
+
+\onecolumn
+
+\begin{center}
+\begin{small}
+\begin{tabular}{p{100mm}p{65mm}}
+\hline
+uW[iv^Cg & ªÌ\\
+\hline
+Applied Optics
+ & Appl.\ Opt. \\
+Applied Physics Letters
+ & Appl.\ Phys.\ Lett. \\
+ACM Computing Surveys
+ & ACM Computing Surveys \\
+Acta Informatica
+ & Acta Informatica \\
+Communications of the ACM
+ & Commun.\ ACM \\
+Computers \& Operations Research
+ & Comput \& Oper.\ Res. \\
+Electronic Engineering
+ & Electron.\ Eng. \\
+Electronic Letters
+ & Electron.\ Lett. \\
+IBM Journal of Research and Development
+ & IBM J. Research \& Development \\
+IBM System Journal
+ & IBM Syst.\ J. \\
+IEEE Communications Magazine
+ & IEEE Commun.\ Mag. \\
+IEEE Network
+ & IEEE Network \\
+IEEE Electron Device Letters
+ & IEEE Electron Device Lett. \\
+IEEE Journal of Quantum Electronics
+ & IEEE J. Quantum Electron. \\
+IEEE Journal of Lightwave Technology
+ & IEEE J. Lightwave Technol. \\
+IEEE Journal of Solid-State Circuits
+ & IEEE J. Solid-State Circuits. \\
+IEEE Journal of Selected Areas in Communications
+ & IEEE J. Select.\ Areas Commun. \\
+IEEE Transactions on Acoustics Speech and Signal Processing
+ & IEEE Trans.\ Acoust., Speech \& Signal Process. \\
+IEEE Transactions on Aerospace and Electronic Systems
+ & IEEE Trans.\ Aerosp.\ \& Electron.\ Syst.\\
+IEEE Transactions on Antennas and Propagation
+ & IEEE Trans.\ Antennas \& Propag. \\
+IEEE Transactions on Automatic Control
+ & IEEE Trans.\ Autom.\ Control \\
+IEEE Transactions on Biomedical Engineering
+ & IEEE Trans.\ Biomed.\ Eng. \\
+IEEE Transactions on Cable Television
+ & IEEE Trans.\ Cable Telev. \\
+IEEE Transactions on Circuits and Systems
+ & IEEE Trans.\ Circuits \& Syst. \\
+IEEE Transactions on Communications
+ & IEEE Trans.\ Commun. \\
+IEEE Transactions on Computers
+ & IEEE Trans.\ Comput. \\
+IEEE Transactions on Computer-Aided Design of Intergrated Circuits and Systems
+ & IEEE Trans.\ Comput.-Aided Des.\ Intergrated Circuits \& Syst. \\
+IEEE Transacitons on Electron Devices
+ & IEEE Trans.\ Electron Devices \\
+IEEE Transactions on Information Theory
+ & IEEE Trans.\ Inf.\ Theory \\
+IEEE Transactions on Magnetics
+ & IEEE Trans Magn. \\
+IEEE Transactions on Microwave Theory and Techniques
+ & IEEE Trans.\ Microwave Theory \& Tech. \\
+IEEE Transactions on Software Engineering
+ & IEEE Trans.\ Software Eng. \\
+IEEE Transactions on Sonics and Ultrasonics
+ & IEEE Trans.\ Sonics \& Ultrason. \\
+The Transactions of the IEICE
+ & Trans.\ IEICE \\
+IEICE Transactions on Fundamentals
+ & IEICE Trans.\ Fundamentals \\
+IEICE Transactions on Communications
+ & IEICE Trans.\ Commun. \\
+IEICE Transactions on Electronics
+ & IEICE Trans.\ Electron. \\
+IEICE Transactions on Information and Systems
+ & IEICE Trans.\ Inf.\ \& Syst. \\
+Information Processing Letters
+ & Infor.\ Process.\ Lett. \\
+Journal of ACM
+ & J. ACM \\
+Journal of Applied Physics
+ & J. Appl.\ Phys. \\
+Journal of Computer and System Sciences
+ & J. Computer \& System Sciences \\
+Journal of the Optical Society of America
+ & J. Opt.\ Soc.\ Am. \\
+Journal de Physique Lettres
+ & J. Phys.\ Lett. \\
+Japanese Journal of Applied Physics
+ & Jpn.\ J. Appl.\ Phys. \\
+Operations Research
+ & Oper.\ Res. \\
+Proceedings of the IEEE
+ & Proc.\ IEEE \\
+Science of Computer Programming
+ & Science of Computer Programming \\
+SIAM Journal on Computing
+ & SIAM J. Computing \\
+ACM Transactions on Computer Systems
+ & ACM Trans.\ Computer Syst. \\
+ACM Transacitons on Database Systems
+ & ACM Trans.\ Database Syst. \\
+ACM Transactions on Graphics
+ & ACM Trans.\ Graphics \\
+ACM Transactions on Mathematical Software
+ & ACM Trans.\ Math.\ Soft. \\
+ACM Transactions on Office Information Systems
+ & ACM Trans.\ Office Infor.\ Syst. \\
+ACM Transactions on Programming Languages and Systems
+ & ACM Trans Prog.\ Lang.\ and Syst. \\
+Theoretical Computer Science
+ & Theoretical Computer Science \\
+\hline
+\end{tabular}
+\end{small}
+\end{center}
+
+\end{document}
